@@ -1,0 +1,31 @@
+/* Empty. Add your own CSS if you like */
+
+.taka-button{
+      border: 1px solid #DDE5EC;
+      color: #373737;
+      /*background-color: #6AA7E7;*/
+      background-color: #DDE5EC;
+      font-size: 0.9em;
+      border-radius: 5px;
+      float: right;
+      margin: 0em;
+      padding: 0.25em 0.4em;
+      cursor: pointer;
+}
+
+.activity-tag-separator{
+    float: left;
+    margin: 0.3em 0.5em 0.2em 0em
+}
+
+.activity-tag-separator > span{
+    border: 1px solid #DDE5EC;
+    color: #373737;
+    /*background-color: #6AA7E7;*/
+    background-color: #DDE5EC;
+    font-size: 0.9em;
+    border-radius: 5px;
+    float: right;
+    margin: 0em 0.75em 0em 0em;
+    padding: 0.25em 0.4em;
+}
