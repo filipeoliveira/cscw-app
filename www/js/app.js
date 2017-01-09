@@ -5,13 +5,13 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('takahanga', ['ionic', 'takahanga.controllers', 'takahanga.app-services'])
+angular.module('takahanga', ['ionic', 'takahanga.controllers', 'takahanga.app-services', 'ngCordova', 'ngOpenFB'])
 
-.run(function($ionicPlatform, $rootScope, $ionicSideMenuDelegate) {
+.run(function($ionicPlatform, $rootScope, $ionicSideMenuDelegate, ngFB) {
+
+  ngFB.init({appId: '1379982378719884', cookie: true});
+
   $ionicPlatform.ready(function() {
-
-    //LOGIN FACEBOOK
-    // ngFB.init({appId: '122602554755025', cookie: true});
 
 
     // //Set a delay to minimize the 'white screen' when Ionic loads his dependencies on the app start.
@@ -38,7 +38,11 @@ angular.module('takahanga', ['ionic', 'takahanga.controllers', 'takahanga.app-se
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $cordovaFacebookProvider) {
+
+ // var appID = 1379982378719884;
+ // var version = "v2.0"; // or leave blank and default is v2.0
+ // $cordovaFacebookProvider.browserInit(appID, version);
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router

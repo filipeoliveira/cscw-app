@@ -4,5 +4,6 @@ angular.module('takahanga.controllers',
 [
   'takahanga.activities',
   'takahanga.user',
-  'takahanga.services'
+  'takahanga.services',
+  'ngOpenFB'
 ])

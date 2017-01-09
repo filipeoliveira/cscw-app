@@ -18,7 +18,13 @@
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
+    <script src="js/plugins/openfb.js"></script>
+    <script src="js/plugins/ngopenfb.js"></script>
+<script   src="https://code.jquery.com/jquery-3.1.1.js"   integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="   crossorigin="anonymous"></script>
+
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
     <script src="cordova.js"></script>
+    <script src="lib/moment.js"></script>
 
     <!-- your app's js -->
     <script src="js/app.js"></script>
@@ -40,7 +46,7 @@
     <!--
       The nav bar that will be updated as we navigate between views.
     -->
-    <ion-nav-bar align-title="center" class="bar-calm">
+    <ion-nav-bar align-title="center" class="bar-taka">
       <ion-nav-back-button>
       </ion-nav-back-button>
 
@@ -49,10 +55,8 @@
       </ion-nav-title>
 
       <ion-nav-buttons side="left">
-        <button class="button button-icon icon ion-navicon"></button>
        </ion-nav-buttons>
       <ion-nav-buttons side="right">
-          <button class="button button-clear">Login</button>
        </ion-nav-buttons>
     </ion-nav-bar>
     <!--
