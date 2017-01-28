@@ -7,18 +7,16 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('takahanga', ['ionic', 'takahanga.controllers', 'takahanga.app-services', 'ngCordova', 'ngOpenFB'])
 
-.run(function($ionicPlatform, $rootScope, $ionicSideMenuDelegate, ngFB) {
+.run(function($ionicPlatform, $rootScope, $ionicSideMenuDelegate, ngFB, $cordovaSplashscreen) {
 
   ngFB.init({appId: '1379982378719884', cookie: true});
 
   $ionicPlatform.ready(function() {
 
-
-    // //Set a delay to minimize the 'white screen' when Ionic loads his dependencies on the app start.
+    //Set a delay to minimize the 'white screen' when Ionic loads his dependencies on the app start.
     // setTimeout(function() {
     //   $cordovaSplashscreen.hide();
     // }, 8000);
-
 
     $rootScope.openMenuLateral = function () {
       $ionicSideMenuDelegate.$getByHandle('menu-lateral').toggleLeft();
@@ -40,31 +38,20 @@ angular.module('takahanga', ['ionic', 'takahanga.controllers', 'takahanga.app-se
 
 .config(function($stateProvider, $urlRouterProvider, $cordovaFacebookProvider) {
 
- // var appID = 1379982378719884;
- // var version = "v2.0"; // or leave blank and default is v2.0
- // $cordovaFacebookProvider.browserInit(appID, version);
-
-  // Ionic uses AngularUI Router which uses the concept of states
-  // Learn more here: https://github.com/angular-ui/ui-router
-  // Set up the various states which the app can be in.
-  // Each state's controller can be found in controllers.js
   $stateProvider
 
-  // setup an abstract state for the tabs directive
-    .state('tab', {
-    url: '/tab',
+  .state('app', {
+    url: '/app',
     abstract: true,
-    templateUrl: 'templates/tabs.html'
+    templateUrl: 'templates/menu.html',
+    controller: 'ActivitiesCtrl'
   })
 
-  // Each tab has its own nav history stack:
-
-  .state('tab.activities', {
+  .state('app.activities', {
     url: '/activities',
     views: {
-      'tab-activities': {
-        templateUrl: 'templates/tab-activities.html',
-        controller: 'ActivitiesCtrl'
+      'menuContent': {
+        templateUrl: 'templates/tab-activities.html'
       }
     }
   })
@@ -90,17 +77,8 @@ angular.module('takahanga', ['ionic', 'takahanga.controllers', 'takahanga.app-se
 
 
 
-    .state('tab.user', {
-      url: '/user',
-      views: {
-        'tab-user': {
-          templateUrl: 'templates/tab-user.html',
-          controller: 'UserCtrl'
-        }
-      }
-    });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/activities');
+  $urlRouterProvider.otherwise('/app/activities');
 
 });
