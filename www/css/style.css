@@ -1,5 +1,32 @@
 /* Empty. Add your own CSS if you like */
 
+
+
+@font-face {
+  font-family: 'RobotoSlab-Thin';
+  src: url('../fonts/RobotoSlab-Thin.ttf');
+}
+
+@font-face {
+  font-family: 'RobotoSlab-Light';
+  src: url('../fonts/RobotoSlab-Light.ttf');
+}
+
+@font-face {
+  font-family: 'RobotoSlab-Regular';
+  src: url('../fonts/RobotoSlab-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'RobotoSlab-Bold';
+  src: url('../fonts/RobotoSlab-Bold.ttf');
+}
+
+*{
+  font-family:'RobotoSlab-Regular'!important;
+  font-weight: 400;
+}
+
 .taka-button{
       border: 1px solid #DDE5EC;
       color: #373737;
@@ -42,6 +69,7 @@
 
 .bar-taka > .title{
   color: white;
+  font-family:'RobotoSlab-Bold'!important;
 }
 
 .bar-taka > div > span{
@@ -57,3 +85,62 @@
   background-color: #5483C1!important;
   color: white;
 }
+
+.menu-contributing{
+  margin: 1em;
+}
+
+.menu-contributing button:hover{
+  color:white!important;
+}
+
+.menu-contributing a{
+  color: white;
+  text-decoration:none;
+}
+
+.taka-dark{
+  background-color: #373737; color: white
+}
+
+
+.profile-image{
+  min-height: 8.5em;
+  /*max-width:  90px!important;
+  max-height: 90px!important;*/
+  background-color: #e9535f;
+}
+
+.no-padding > list{
+  padding: none!important;
+}
+
+.profile-image img{
+  border-radius: 50%;
+  max-width:  90px!important;
+  max-height: 90px!important;
+}
+
+.profile-user > span{
+  color: white!important;
+}
+
+.profile-user{
+  text-align: center;
+  padding-bottom: 1.5em;
+  background-color: #e9535f;
+}
+
+.profile-user > span:first-of-type{
+  font-family:'RobotoSlab-Bold'!important;
+  font-weight: 600;
+  font-size: 1.25em;
+  letter-spacing: 0.5px;
+}
+
+
+/*#232323
+#282828
+#1573dd
+#bd081c
+#aaaaaa*/
