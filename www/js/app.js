@@ -69,15 +69,25 @@ angular.module('takahanga', ['ionic', 'takahanga.controllers', 'takahanga.app-se
     }
   })
 
-  .state('tab.services', {
-      url: '/services',
+  .state('app.about', {
+      url: '/about',
       views: {
-        'tab-services': {
-          templateUrl: 'templates/tab-services.html',
-          controller: 'ServicesCtrl'
+        'menuContent': {
+          templateUrl: 'templates/tab-about.html'
         }
       }
     })
+  //
+  //
+  //   .state('app.user', {
+  //     url: '/user',
+  //     views: {
+  //       'menuContent': {
+  //         templateUrl: 'templates/tab-user.html'
+  //       }
+  //     }
+  //   });
+
 
 
     .state('tab.user', {
