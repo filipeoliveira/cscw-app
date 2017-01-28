@@ -4,7 +4,7 @@
 
 <div ng-if="!logged" style="background-color: #f5f5f5">
   <div style="padding: 2em;">
-    <img style="width:150px; display:block; margin:auto; left: 0; top: 0; right: 0; bottom:0; " src="http://i2.wp.com/agence-takahanga.com/wp-content/uploads/2016/09/iconique-couleur.png?fit=668%2C668">
+    <img style="width:150px; display:block; margin:auto; left: 0; top: 0; right: 0; bottom:0; " ng-src="http://i2.wp.com/agence-takahanga.com/wp-content/uploads/2016/09/iconique-couleur.png?fit=668%2C668">
   </div>
 
   <div class="clear"></div>
@@ -14,7 +14,7 @@
 
       <label ng-if="!logged" class="item" style="padding: 0; background-color: #5483C1;  height: 100%">
         <h2 ng-if="!logged" style="text-align:center; margin: 2em 1em; line-height: 1.4em; color:white;">Faça login com o facebook<br> para cadastrar seus eventos. </h2>
-        <img ng-if="!logged" style="width:50px; display:block; margin:auto; left: 0; top: 0; right: 0; bottom:0; " src="https://facebookbrand.com/wp-content/themes/fb-branding/prj-fb-branding/assets/images/fb-art.png">
+          <img ng-if="!logged" style="width:50px; display:block; margin:auto; left: 0; top: 0; right: 0; bottom:0; " ng-src="https://facebookbrand.com/wp-content/themes/fb-branding/prj-fb-branding/assets/images/fb-art.png">
         <button class="button button-block button-positive" style="width: 91%; margin: 2em 1em; background-color: #3b5999" ng-if="!logged" ng-click="fbLogin()">
         Entre com o facebook
         </button>
