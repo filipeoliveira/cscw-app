@@ -1,58 +1,66 @@
-<ion-side-menus enable-menu-with-back-views="false" delegate-handle="menu-lateral">
-
-  <ion-side-menu-content drag-content="false">
-    <ion-nav-bar class="bar-stable">
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class=" bar-taka ">
       <ion-nav-back-button>
       </ion-nav-back-button>
 
       <ion-nav-buttons side="left">
-        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        <button style="color:white!important" class="button button-icon button-clear ion-navicon" menu-toggle="left">
         </button>
       </ion-nav-buttons>
     </ion-nav-bar>
     <ion-nav-view name="menuContent"></ion-nav-view>
   </ion-side-menu-content>
 
-  <ion-side-menu side="left" style="background-color: #504E58">
-    <ion-header-bar class="bar-stable" style="background-color: #28b459;">
-      <h1 class="title" style="color: white;">Verde Menu</h1>
-    </ion-header-bar>
+  <ion-side-menu side="left">
 
     <ion-content>
-      <ion-list style="background-color:black">
+      <ion-list class="no-padding">
 
-        <ion-item menu-close href="#/app/main">
+
+      <div ng-if="logged" menu-close href="#/app/activities">
+
+        <div class="profile-image" style="display:flex;justify-content:center;align-items:center;height:8.5em;">
+          <img ng-src="{{user.image_url_large}}" style="width:100px;height:100px;"></img>
+        </div>
+
+        <div class="profile-user">
+          <span>{{user.first_name}} {{user.last_name}}</span>
+          <span>{{user.email}}</span>
+        </div>
+      </div>
+
+        <!-- <ion-item>
+            <div ng-if="logged">
+              <div class="profile-image item-avatar">
+                <img ng-src="{{user.image_url_large}}"></img>
+
+                <div class="profile-user">
+                  <h4>{{user.first_name}} {{user.last_name}}</h4>
+                  <h5>{{user.email}}</h5>
+                </div>
+              </div>
+            </div>
+        </ion-item> -->
+
+        <ion-item menu-close href="#/app/activities">
           Home
         </ion-item>
-
-        <ion-item menu-close ng-click="importarApenadoRG()" ng-if="$root.NUSPEN_DEV">
-          Importar apenado
+        <ion-item menu-close href="#/app/about">
+          Sobre o aplcativo
         </ion-item>
 
-        <ion-item menu-close ng-click="atualizarApenadosSIPEN()" ng-if="$root.NUSPEN_DEV">
-          Atualizar apenados do SIPEN
-        </ion-item>
-
-        <ion-item  menu-close ng-click="abrirModalExplorarPendencia()">
-          Explorar pendências
-        </ion-item>
-
-        <ion-item menu-close ng-click="abrirModalAtendimento()" ng-if="$root.NUSPEN_ONLINE">
-          Listas de atendimento
-        </ion-item>
-
-        <ion-item menu-close ng-click="limparBanco()" ng-if="$root.NUSPEN_DEV">
-          Limpar o banco
-        </ion-item>
-
-        <ion-item menu-close ng-click="showPopupConfig()">
-          Configurações
-        </ion-item>
-
-        <ion-item menu-close ng-click="verificarLogout()">
-          Sair
-        </ion-item>
-
+        <div class="menu-contributing">
+          <button class="button bar-taka button-block icon-left ion-social-github">Seja um colaborador</button>
+        </div>
+        <div ng-if="isMobile" class="menu-contributing">
+            <button ng-click="openGoogleDrive()" class="button taka-dark button-block icon-left ion-android-document">Veja o relatório do app</button>
+        </div>
+        <div ng-if="!isMobile" class="menu-contributing">
+          <a href="https://docs.google.com/document/d/1XrVgZRagMLQbTXF7qWcfQ8sEageP6q9I4S0gBLrt4dk/edit">
+            <button class="button taka-dark button-block icon-left ion-android-document">Veja o relatório do app</button>
+          </a>
+        </div>
       </ion-list>
     </ion-content>
   </ion-side-menu>
