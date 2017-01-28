@@ -8,14 +8,14 @@
           <div class="list card">
 
             <div class="item item-avatar">
-                <img src="{{selectedEvent.cover.source}}">
+                <img ng-src="{{selectedEvent.cover.source}}">
               <h2>{{selectedEvent.name}}</h2>
               <span style="font-size: xx-small; float:right;">{{selectedEvent.start_time | date:"dd/MM/yyyy 'as' h:mma"}}</span>
               <p>{{selectedEvent.place.name}}</p>
             </div>
 
             <div class="item item-body">
-              <img class="full-image" src="{{selectedEvent.cover.source}}">
+              <img class="full-image" ng-src="{{selectedEvent.cover.source}}">
               <p>
                 {{selectedEvent.description | limitTo: textLength}}
                  <a ng-click="changeLength(selectedEvent)" class="showMore" style="margin-left: 1em; cursor: pointer"><strong>Ler mais</strong></a>

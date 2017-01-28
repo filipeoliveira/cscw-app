@@ -28,7 +28,7 @@
       </label>
 
       <a class="item item-avatar" href="#" ng-if="logged" style="background-color: #f5f5f5;">
-          <img src="{{user.picture.data.url}}">
+          <img ng-src="{{user.picture.data.url}}">
           <h2>Olá, {{user.first_name}} {{user.last_name}}</h2>
           <p style="float:left;">{{user.email}}</p>
           <p style="float:right;" ng-click="$scope.logged = false">Sair</p>
@@ -37,7 +37,7 @@
 
       <div ng-if="logged" ng-repeat="event in eventos">
         <a class="item item-thumbnail-left" style="background-color: #fefefe" href="#">
-          <img ng-click="selectEvent(event)" src="{{event.cover.source}}">
+          <img ng-click="selectEvent(event)" ng-src="{{event.cover.source}}">
           <h2 ng-click="selectEvent(event)" >{{event.name}}</h2>
           <p ng-click="selectEvent(event)">{{event.place.name}}</p>
           <div class="activity-tag-separator">
